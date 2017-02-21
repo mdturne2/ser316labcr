@@ -2,7 +2,7 @@ package banking.primitive.core;
 
 public class Checking extends Account {
 
-	private static final long serialVersionUID = 11L;
+	private static final long _SERIAL_VERSION_UID = 11L;
 	private int numWithdraws = 0;
 	
 	private Checking(String name) {
@@ -53,9 +53,14 @@ public class Checking extends Account {
 		return false;
 	}
 
-	public String getType() { return "Checking"; }
+	public String getType() {
+		final String CHECKING_STR = "Checking";
+		return CHECKING_STR; 
+	}
 	
 	public String toString() {
-		return "Checking: " + getName() + ": " + getBalance();
+		final String CHECKING_COLON_SPACE_STR = "Checking: ";
+		final String COLON_SPACE_STR = ": ";
+		return CHECKING_COLON_SPACE_STR + getName() + COLON_SPACE_STR + getBalance();
 	}
 }
