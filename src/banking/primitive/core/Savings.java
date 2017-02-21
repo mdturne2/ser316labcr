@@ -71,4 +71,3 @@ public class Savings extends Account {
 	
 	private int numWithdraws = 0;
 }
-

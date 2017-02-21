@@ -1,3 +1,4 @@
+
 package banking.primitive.core;
 /*
  * File: Checking.java
@@ -86,4 +87,3 @@ public class Checking extends Account {
 	
 	private int numWithdraws = 0;
 }
-

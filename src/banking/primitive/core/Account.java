@@ -1,4 +1,3 @@
-
 /*
  * File: Account.java
  * Author: kevingary
@@ -93,3 +92,4 @@ public abstract class Account implements java.io.Serializable {
     protected float balance = 0.0F;
     protected String name;
 }
+
