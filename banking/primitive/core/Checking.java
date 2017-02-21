@@ -7,8 +7,6 @@ package banking.primitive.core;
  * Description: Contains Checking implementation of Accounts
  */
 
-
-
 /**
 Class: Checking
 
