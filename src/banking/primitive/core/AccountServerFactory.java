@@ -3,7 +3,7 @@ package banking.primitive.core;
 
 public class AccountServerFactory {
 
-	protected static AccountServerFactory singleton = null;
+	private static AccountServerFactory singleton = null;
 
 	protected AccountServerFactory() {
 
