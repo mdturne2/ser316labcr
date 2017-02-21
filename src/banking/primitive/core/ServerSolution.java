@@ -1,11 +1,3 @@
-/*
- * File: ServerSolution.java
- * Author: kevingary
- * Date: Unknown
- * 
- * Description: Contains info for the GUI
- */
-
 
 package banking.primitive.core;
 
@@ -17,11 +9,15 @@ import java.io.*;
 
 import banking.primitive.core.Account.State;
 
+/*
+ * File: ServerSolution.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Contains info for the GUI
+ */
+
 class ServerSolution implements AccountServer {
-
-	static String fileName = "accounts.ser";
-
-	Map<String,Account> accountMap = null;
 
 	public ServerSolution() {
 		accountMap = new HashMap<String,Account>();
@@ -135,5 +131,9 @@ class ServerSolution implements AccountServer {
 			}
 		}
 	}
+	
+	static String fileName = "accounts.ser";
+
+	Map<String,Account> accountMap = null;
 
 }
