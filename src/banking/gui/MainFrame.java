@@ -11,9 +11,17 @@ import java.awt.Container;
 import java.awt.event.*;
 import javax.swing.*;
 
+/*
+ * File: MainFrame.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Contains info for the GUI
+ */
+
 @SuppressWarnings("serial")
 class MainFrame extends JFrame {
-	private AccountServer _myServer;
+  private AccountServer _myServer;
 	private _Properties props;
 	private _JLabel typeLabel;
 	private _JLabel nameLabel;
@@ -26,7 +34,14 @@ class MainFrame extends JFrame {
 	private _JButton	newAccountButton;
 	private _JButton	displayAccountsButton;
 	private _JButton	displayODAccountsButton;
-  
+	/**
+	  Method: MainFrame
+	  Inputs: propertyFile
+	  Returns: N/A
+
+
+	  Description: Constructor that creates the server and calls to create JFrame GUI
+	*/  
 	public MainFrame(String propertyFile) throws IOException {
 
 		//** initialize myServer
@@ -34,10 +49,10 @@ class MainFrame extends JFrame {
 
 		_props = new Properties();
 
+
 		FileInputStream fis = null; 
 		try {
 			fis =  new FileInputStream(propertyFile);
-			_props.load(fis);
 			fis.close();
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
@@ -108,6 +123,13 @@ class MainFrame extends JFrame {
 	}
 
 	class _DisplayHandler implements ActionListener {
+    /**
+		  Method: actionPerformed
+		  Inputs: e
+		  Returns: N/A
+
+		  Description: Displays all accounts or all active accounts based on which button was pressed.
+		*/
 		public void actionPerformed(ActionEvent e) {
 			List<Account> accounts = null;
 			if (e.getSource() == _displayAccountsButton) {
@@ -128,6 +150,13 @@ class MainFrame extends JFrame {
 
 	// Complete a handler for new account button
 	class _NewAccountHandler implements ActionListener {
+    	/**
+		  Method: actionPerformed
+		  Inputs: e
+		  Returns: N/A
+
+		  Description: Opens a window saying whether or not an account was successfully created when the button is clicked.
+		*/
 		public void actionPerformed(ActionEvent e) {
 			String type = _typeOptions.getSelectedItem().toString();
 			String name = _nameField.getText();
@@ -143,7 +172,16 @@ class MainFrame extends JFrame {
 	
 	// Complete a handler for new account button
 	class _SaveAccountsHandler implements ActionListener {
+    	/**
+		  Method: actionPerformed
+		  Inputs: e
+		  Returns: N/A
+
+		  Description: Opens a window saying whether or not accounts were saved properly when the button is clicked. 
+		*/
 		public void actionPerformed(ActionEvent e) {
+      final String ACCOUNTS_SAVED_STR = "Accounts saved";
+			final String ACCOUNT_SAVE_ERR_STR = "Error saving accounts";
 			try {
 				_myServer.saveAccounts();
 				JOptionPane.showMessageDialog(null, "Accounts saved");
@@ -155,7 +193,16 @@ class MainFrame extends JFrame {
 
 	// Complete a handler for deposit button
 	class _DepositHandler implements ActionListener {
+    	/**
+		  Method: actionPerformed
+		  Inputs: e
+		  Returns: N/A
+
+		  Description: Makes a deposit and opens a window saying whether or not a deposit was successful when the button is clicked.
+		*/
 		public void actionPerformed(ActionEvent e) {
+      final String SUCCESSFUL_DEPOSIT_STR = "Deposit successful";
+			final String FAILED_DEPOSIT_STR = "Deposit unsuccessful";
 			String name = _nameField.getText();
 			String balance = _balanceField.getText();
 			Account acc = _myServer.getAccount(name);
@@ -168,7 +215,16 @@ class MainFrame extends JFrame {
 	}
 	// Complete a handler for deposit button
 	class _WithdrawHandler implements ActionListener {
+    	/**
+		  Method: actionPerformed
+		  Inputs: e
+		  Returns: N/A
+
+		  Description: Makes a withdrawal and opens a window saying whether or not the withdrawal 
+		*/
 		public void actionPerformed(ActionEvent e) {
+      final String SUCCESSFUL_WITHDRAWAL_STR = "Withdrawal successful";
+			final String FAILED_WITHDRAWAL_STR = "Withdrawal unsuccessful";
 			String name = _nameField.getText();
 			String balance = _balanceField.getText();
 			Account acc = _myServer.getAccount(name);
@@ -182,11 +238,18 @@ class MainFrame extends JFrame {
 	
 	//** Complete a handler for the Frame that terminates 
 	//** (System.exit(1)) on windowClosing event
-
 	static class _FrameHandler extends WindowAdapter {
-		public void windowClosing(WindowEvent e) {
+		/**
+		  Method: windowClosing
+		  Inputs: e
+		  Returns: Terminates program.
 
-			System.exit(0);
+		  Description:
+		*/
+		public void windowClosing(WindowEvent e) {
+			final int SYSTEM_EXIT_PARAMETER = 0;
+			System.exit(SYSTEM_EXIT_PARAMETER);
 		}
 	}
 }
+
