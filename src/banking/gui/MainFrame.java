@@ -1,3 +1,4 @@
+
 package banking.gui;
 
 import banking.primitive.core.Account;
@@ -10,6 +11,14 @@ import java.awt.FlowLayout;
 import java.awt.Container;
 import java.awt.event.*;
 import javax.swing.*;
+
+/*
+ * File: MainFrame.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Contains info for the GUI
+ */
 
 @SuppressWarnings("serial")
 class MainFrame extends JFrame {
@@ -219,3 +228,4 @@ class MainFrame extends JFrame {
 		}
 	}
 }
+

@@ -1,5 +1,14 @@
 package banking.gui;
 
+/*
+ * File: Main.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Begin program execution
+ */
+
+
 import javax.swing.JFrame;
 
 /**
@@ -32,3 +41,4 @@ final class Main {
 
 	}
 }
+

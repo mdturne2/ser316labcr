@@ -1,4 +1,12 @@
+
 package banking.primitive.core;
+/*
+ * File: Checking.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Contains Checking implementation of Accounts
+ */
 
 public class Checking extends Account {
 
@@ -64,3 +72,4 @@ public class Checking extends Account {
 		return CHECKING_COLON_SPACE_STR + getName() + COLON_SPACE_STR + getBalance();
 	}
 }
+
