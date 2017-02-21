@@ -16,10 +16,6 @@ public abstract class Account implements java.io.Serializable {
         OPEN, CLOSED, OVERDRAWN
     };
 
-    protected float balance = 0.0F;
-    protected String name;
-    private State state;
-
     protected Account(String n) {
         name = n;
         state = State.OPEN;
