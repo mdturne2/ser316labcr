@@ -14,19 +14,19 @@ import javax.swing.*;
 
 @SuppressWarnings("serial")
 class MainFrame extends JFrame {
-	private AccountServer	myServer;
-	private Properties		props;
-	private JLabel			typeLabel;
-	private JLabel			nameLabel;
-	private JLabel			balanceLabel;
-	private JComboBox		typeOptions;
-	private JTextField		nameField;
-	private JTextField		balanceField;
-	private JButton 		depositButton;
-	private JButton 		withdrawButton;
-	private JButton			newAccountButton;
-	private JButton			displayAccountsButton;
-	private JButton			displayODAccountsButton;
+	private AccountServer myServer;
+	private Properties props;
+	private JLabel typeLabel;
+	private JLabel nameLabel;
+	private JLabel balanceLabel;
+	private JComboBox typeOptions;
+	private JTextField nameField;
+	private JTextField balanceField;
+	private JButton depositButton;
+	private JButton withdrawButton;
+	private JButton	newAccountButton;
+	private JButton	displayAccountsButton;
+	private JButton	displayODAccountsButton;
 
 	public MainFrame(String propertyFile) throws IOException {
 
@@ -50,9 +50,9 @@ class MainFrame extends JFrame {
 	
 	private void constructForm() {
 		//*** Make these read from properties
-		typeLabel		= new JLabel(props.getProperty("TypeLabel"));
-		nameLabel		= new JLabel(props.getProperty("NameLabel"));
-		balanceLabel	= new JLabel(props.getProperty("BalanceLabel"));
+		typeLabel = new JLabel(props.getProperty("TypeLabel"));
+		nameLabel = new JLabel(props.getProperty("NameLabel"));
+		balanceLabel = new JLabel(props.getProperty("BalanceLabel"));
 
 		Object[] accountTypes = {"Savings", "Checking"};
 		typeOptions = new JComboBox(accountTypes);
