@@ -14,6 +14,13 @@ class ServerSolution implements AccountServer {
 
 	Map<String,Account> accountMap = null;
 
+	/**
+	  Method: ServerSolution
+	  Inputs: N/A
+	  Returns: N/A
+
+	  Description: Reads from a file.
+	*/
 	public ServerSolution() {
 		accountMap = new HashMap<String,Account>();
 		File file = new File(fileName);
@@ -45,6 +52,13 @@ class ServerSolution implements AccountServer {
 		}
 	}
 	
+	/**
+	  Method: newAccountFactory
+	  Inputs: type, name, balance
+	  Returns: True/False
+
+	  Description: Creates a new account of type, type and places it in accountMap
+	*/
 	private boolean newAccountFactory(String type, String name, float balance)
 		throws IllegalArgumentException {
 		
@@ -68,6 +82,13 @@ class ServerSolution implements AccountServer {
 		return true;
 	}
 
+	/**
+	  Method: newAccount
+	  Inputs: type, name, balance
+	  Returns: True/False
+
+	  Description: Creates a new account. Fails if balance is negative.
+	*/
 	public boolean newAccount(String type, String name, float balance) 
 		throws IllegalArgumentException {
 		
@@ -76,6 +97,13 @@ class ServerSolution implements AccountServer {
 		return newAccountFactory(type, name, balance);
 	}
 	
+	/**
+	  Method: closeAccount
+	  Inputs: name
+	  Returns: True/False
+
+	  Description: Sets specified account state to CLOSED.
+	*/
 	public boolean closeAccount(String name) {
 		Account acc = accountMap.get(name);
 		if (acc == null) {
@@ -85,14 +113,35 @@ class ServerSolution implements AccountServer {
 		return true;
 	}
 
+	/**
+	  Method: getAccount
+	  Inputs: name
+	  Returns: account
+
+	  Description: Returns Account with given name in accountMap
+	*/
 	public Account getAccount(String name) {
 		return accountMap.get(name);
 	}
 
+	/**
+	  Method: getAllAccounts
+	  Inputs: N/A
+	  Returns: List
+
+	  Description: Returns a list of all the Account objects in accountMap
+	*/
 	public List<Account> getAllAccounts() {
 		return new ArrayList<Account>(accountMap.values());
 	}
 
+	/**
+	  Method: getActiveAccounts
+	  Inputs: N/A
+	  Returns: List
+
+	  Description: Returns a list of all accounts that are not set to CLOSED.
+	*/
 	public List<Account> getActiveAccounts() {
 		List<Account> result = new ArrayList<Account>();
 
@@ -104,6 +153,13 @@ class ServerSolution implements AccountServer {
 		return result;
 	}
 	
+	/**
+	  Method: saveAccounts
+	  Inputs: N/A
+	  Returns: N/A
+
+	  Description: Saves accounts to File.
+	*/
 	public void saveAccounts() throws IOException {
 		ObjectOutputStream out = null; 
 		try {

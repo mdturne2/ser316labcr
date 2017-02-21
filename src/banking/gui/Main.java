@@ -9,16 +9,22 @@ import javax.swing.JFrame;
  */
 final class Main {
 	/**
-	 * Private constructor to address STYLE issue.
-	 */
+	  Method: Main()
+	  Inputs: N/A
+	  Returns: N/A
+
+	  Description: empty private constructor
+	*/
 	private Main() {
 	}
 	
 	/**
-	 * All methods should have a Javadoc according to STYLE.
-	 * @param args command-line arguments
-	 * @throws Exception as per typical main specifications
-	 */
+	  Method: main()
+	  Inputs: args[]
+	  Returns: N/A
+
+	  Description: Main method that reads my.properties and creates JFrame
+	*/
 	public static void main(final String[] args) throws Exception {
 
 		if (args.length != 1) {

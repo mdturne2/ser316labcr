@@ -26,7 +26,13 @@ class MainFrame extends JFrame {
 	JButton			newAccountButton;
 	JButton			displayAccountsButton;
 	JButton			displayODAccountsButton;
+	/**
+	  Method: MainFrame
+	  Inputs: propertyFile
+	  Returns: N/A
 
+	  Description: Constructor that creates the server and calls to create JFrame GUI
+	*/
 	public MainFrame(String propertyFile) throws IOException {
 
 		//** initialize myServer
@@ -46,7 +52,13 @@ class MainFrame extends JFrame {
 		constructForm();
 	}
 
-	
+	/**
+	  Method: constructForm
+	  Inputs: N/A
+	  Returns: N/A
+
+	  Description: Creates JFrame GUI
+	*/
 	private void constructForm() {
 		//*** Make these read from properties
 		typeLabel		= new JLabel(props.getProperty("TypeLabel"));
@@ -108,6 +120,13 @@ class MainFrame extends JFrame {
 	}
 
 	class DisplayHandler implements ActionListener {
+		/**
+		  Method: actionPerformed
+		  Inputs: e
+		  Returns: N/A
+
+		  Description: Displays all accounts or all active accounts based on which button was pressed.
+		*/
 		public void actionPerformed(ActionEvent e) {
 			List<Account> accounts = null;
 			if (e.getSource() == displayAccountsButton) {
@@ -127,7 +146,15 @@ class MainFrame extends JFrame {
 	}
 
 	// Complete a handler for new account button
+	
 	class NewAccountHandler implements ActionListener {
+		/**
+		  Method: actionPerformed
+		  Inputs: e
+		  Returns: N/A
+
+		  Description: Opens a window saying whether or not an account was successfully created when the button is clicked.
+		*/
 		public void actionPerformed(ActionEvent e) {
 			String type = typeOptions.getSelectedItem().toString();
 			String name = nameField.getText();
@@ -143,6 +170,13 @@ class MainFrame extends JFrame {
 	
 	// Complete a handler for new account button
 	class SaveAccountsHandler implements ActionListener {
+		/**
+		  Method: actionPerformed
+		  Inputs: e
+		  Returns: N/A
+
+		  Description: Opens a window saying whether or not accounts were saved properly when the button is clicked. 
+		*/
 		public void actionPerformed(ActionEvent e) {
 			try {
 				myServer.saveAccounts();
@@ -155,6 +189,13 @@ class MainFrame extends JFrame {
 
 	// Complete a handler for deposit button
 	class DepositHandler implements ActionListener {
+		/**
+		  Method: actionPerformed
+		  Inputs: e
+		  Returns: N/A
+
+		  Description: Makes a deposit and opens a window saying whether or not a deposit was successful when the button is clicked.
+		*/
 		public void actionPerformed(ActionEvent e) {
 			String name = nameField.getText();
 			String balance = balanceField.getText();
@@ -168,6 +209,13 @@ class MainFrame extends JFrame {
 	}
 	// Complete a handler for deposit button
 	class WithdrawHandler implements ActionListener {
+		/**
+		  Method: actionPerformed
+		  Inputs: e
+		  Returns: N/A
+
+		  Description: Makes a withdrawal and opens a window saying whether or not the withdrawal 
+		*/
 		public void actionPerformed(ActionEvent e) {
 			String name = nameField.getText();
 			String balance = balanceField.getText();
@@ -184,6 +232,13 @@ class MainFrame extends JFrame {
 	//** (System.exit(1)) on windowClosing event
 
 	static class FrameHandler extends WindowAdapter {
+		/**
+		  Method: windowClosing
+		  Inputs: e
+		  Returns: Terminates program.
+
+		  Description:
+		*/
 		public void windowClosing(WindowEvent e) {
 
 			System.exit(0);
