@@ -16,7 +16,7 @@ Description: This class helps create the "server-side" of the project.
 */
 public class AccountServerFactory {
 
-	protected static AccountServerFactory singleton = null;
+	private static AccountServerFactory singleton = null;
 
 	protected AccountServerFactory() {
 
@@ -34,3 +34,4 @@ public class AccountServerFactory {
 		return new ServerSolution();
 	}
 }
+
