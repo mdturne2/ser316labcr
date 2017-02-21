@@ -1,5 +1,14 @@
 package banking.gui;
 
+/*
+ * File: Main.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Begin program execution
+ */
+
+
 import javax.swing.JFrame;
 
 /**
@@ -20,9 +29,9 @@ final class Main {
 	 * @throws Exception as per typical main specifications
 	 */
 	public static void main(final String[] args) throws Exception {
-
+		final String USAGE_STR = new String("Usage: java FormMain ");
 		if (args.length != 1) {
-			System.out.println("Usage: java FormMain <property file>");
+			System.out.println(USAGE_STR + "<property file>");
 			System.exit(1);
 		}
 
@@ -32,3 +41,4 @@ final class Main {
 
 	}
 }
+

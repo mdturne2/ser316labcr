@@ -1,3 +1,12 @@
+/*
+ * File: Account.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Contains generic account methods
+ */
+
+
 package banking.primitive.core;
 
 public abstract class Account implements java.io.Serializable {
@@ -6,10 +15,6 @@ public abstract class Account implements java.io.Serializable {
     protected enum State {
         OPEN, CLOSED, OVERDRAWN
     };
-
-    protected float balance = 0.0F;
-    protected String name;
-    private State state;
 
     protected Account(String n) {
         name = n;
@@ -22,19 +27,30 @@ public abstract class Account implements java.io.Serializable {
     }
 
     /**
-     * @return name of the Account
-     */
-    public final String getName() {
-        return name;
-    }
-
-    /**
      * @return balance in the Account
      */
     public final float getBalance() {
         return balance;
     }
 
+    
+    /**
+     * @return name of the Account
+     */
+    public final String getName() {
+        return name;
+    }
+
+    protected final State getState() {
+        return state;
+    }
+    
+    public abstract String getType();
+
+    protected final void setState(State s) {
+        state = s;
+    }
+    
     /**
      * Adds money to an account. May not be done if the account is CLOSED
      * 
@@ -59,18 +75,15 @@ public abstract class Account implements java.io.Serializable {
     /**
      * @return either "Checking" or "Savings"
      */
-    public abstract String getType();
+    
 
-    protected final State getState() {
-        return state;
-    }
-
-    protected final void setState(State s) {
-        state = s;
-    }
 
     public String toString() {
         return "Account " + name + " has $" + balance + "and is " + getState()
                 + "\n";
     }
+    private State state;
+    protected float balance = 0.0F;
+    protected String name;
 }
+
