@@ -57,8 +57,6 @@ public class Savings extends Account {
 		return false;
 	}
 
-
-
 	public String toString() {
 		final String CHECKING_COLON_SPACE_STR = "Checking: ";
 		final String COLON_SPACE_STR = ": ";
