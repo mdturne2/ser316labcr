@@ -1,4 +1,3 @@
-
 package banking.primitive.core;
 
 import java.io.IOException;

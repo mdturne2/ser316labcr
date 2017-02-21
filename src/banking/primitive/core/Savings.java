@@ -96,8 +96,6 @@ public class Savings extends Account {
 		return "Checking";
 	}
 
-
-
 	/**
 	  Method: toString
 	  Inputs: N/A
@@ -105,6 +103,7 @@ public class Savings extends Account {
 
 	  Description: String containing name and balance of the account.
 	*/
+
 	public String toString() {
 		final String CHECKING_COLON_SPACE_STR = "Checking: ";
 		final String COLON_SPACE_STR = ": ";

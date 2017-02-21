@@ -1,4 +1,3 @@
-
 package banking.primitive.core;
 
 import java.util.ArrayList;
@@ -200,5 +199,4 @@ class ServerSolution implements AccountServer {
 	static String fileName = "accounts.ser";
 
 	Map<String,Account> accountMap = null;
-
 }
