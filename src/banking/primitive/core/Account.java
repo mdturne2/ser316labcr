@@ -1,4 +1,14 @@
 
+/*
+ * File: Account.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Contains generic account methods
+ */
+
+
+
 package banking.primitive.core;
 
 public abstract class Account implements java.io.Serializable {
@@ -19,10 +29,12 @@ public abstract class Account implements java.io.Serializable {
 
     Description: Constructor to create account using just the name as an argument
   */
+
     protected Account(String n) {
         name = n;
         state = State.OPEN;
     }
+
 
     /**
     Method: Account
@@ -31,23 +43,30 @@ public abstract class Account implements java.io.Serializable {
 
     Description: Constructor to create account based on name and balance.
   */
+
     protected Account(String n, float b) {
         this(n); 
         balance = b;
     }
 
     /**
+
     Method: getName
     Inputs: N/A
     Returns: name
 
     Description: Returns the name of the account.
     */
+
+     * @return name of the Account
+     */
+
     public final String getName() {
         return name;
     }
 
     /**
+
     Method: getBalance
     Inputs: N/A
     Returns: balance
@@ -65,6 +84,22 @@ public abstract class Account implements java.io.Serializable {
 
     Description: Adds money to an account. May not be done if the account is CLOSED
     */
+
+     * @return balance in the Account
+     */
+    public final float getBalance() {
+        return balance;
+    }
+
+    /**
+     * Adds money to an account. May not be done if the account is CLOSED
+     * 
+     * @param parameter
+     *            amount is a deposit and must be > 0
+     * @return true if the deposit was successful, false if not due to amount or
+     *         invalid state
+     */
+
     public abstract boolean deposit(float amount);
 
     /**
@@ -76,6 +111,7 @@ public abstract class Account implements java.io.Serializable {
      * @return true if the deposit was successful, false if not due to amount or
      *         invalid state
      */
+
     
     /**
     Method: withdraw
@@ -114,9 +150,11 @@ public abstract class Account implements java.io.Serializable {
 
     Description: Sets the state of the account.
     */
+
     protected final void setState(State s) {
         state = s;
     }
+
 
     /**
     Method: toString
@@ -125,8 +163,17 @@ public abstract class Account implements java.io.Serializable {
 
     Description: Returns a string containing the name, balance and state of the account.
     */
+
     public String toString() {
         return "Account " + name + " has $" + balance + "and is " + getState()
                 + "\n";
     }
+
 }
+
+    private State state;
+    protected float balance = 0.0F;
+    protected String name;
+}
+
+

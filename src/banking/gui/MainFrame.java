@@ -22,6 +22,7 @@ import javax.swing.*;
 
 @SuppressWarnings("serial")
 class MainFrame extends JFrame {
+
 	
 	
 	AccountServer	myServer;
@@ -41,6 +42,7 @@ class MainFrame extends JFrame {
 	  Method: MainFrame
 	  Inputs: propertyFile
 	  Returns: N/A
+
 
 	  Description: Constructor that creates the server and calls to create JFrame GUI
 	*/
@@ -279,8 +281,22 @@ class MainFrame extends JFrame {
 		*/
 		public void windowClosing(WindowEvent e) {
 			final int SYSTEM_EXIT_PARAMETER = 0;
-			System.exit(SYSTEM_EXIT_PARAMENTER);
+			System.exit(SYSTEM_EXIT_PARAMETER);
 		}
 	}
+	
+	AccountServer	myServer;
+	Properties		props;
+	JLabel			typeLabel;
+	JLabel			nameLabel;
+	JLabel			balanceLabel;
+	JComboBox		typeOptions;
+	JTextField		nameField;
+	JTextField		balanceField;
+	JButton 		depositButton;
+	JButton 		withdrawButton;
+	JButton			newAccountButton;
+	JButton			displayAccountsButton;
+	JButton			displayODAccountsButton;
 }
 

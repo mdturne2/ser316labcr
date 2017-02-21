@@ -35,7 +35,9 @@ public class Savings extends Account {
 		super(name, balance);
 	}
 	
-	public String getType() { return "Checking"; }
+	public String getType() { 
+		return "Checking";
+	}
 
 	/**
 	  Method: deposit
@@ -77,7 +79,6 @@ public class Savings extends Account {
 		}
 		return false;
 	}
-
 	
 	/**
 	  Method: getType
