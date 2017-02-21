@@ -10,8 +10,9 @@ package banking.primitive.core;
 
 public class Checking extends Account {
 
-	private static final long _SERIAL_VERSION_UID = 11L;
-	private int numWithdraws = 0;
+
+	private static final long serialVersionUID = 11L;
+
 	
 	private Checking(String name) {
 		super(name);
@@ -71,5 +72,7 @@ public class Checking extends Account {
 		final String COLON_SPACE_STR = ": ";
 		return CHECKING_COLON_SPACE_STR + getName() + COLON_SPACE_STR + getBalance();
 	}
+	
+	private int numWithdraws = 0;
 }
 
