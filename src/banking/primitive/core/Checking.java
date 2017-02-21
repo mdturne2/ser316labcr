@@ -1,8 +1,18 @@
+
 package banking.primitive.core;
+/*
+ * File: Checking.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Contains Checking implementation of Accounts
+ */
 
 public class Checking extends Account {
 
+
 	private static final long serialVersionUID = 11L;
+
 	
 	private Checking(String name) {
 		super(name);
@@ -52,11 +62,17 @@ public class Checking extends Account {
 		return false;
 	}
 
-	public String getType() { return "Checking"; }
+	public String getType() {
+		final String CHECKING_STR = "Checking";
+		return CHECKING_STR; 
+	}
 	
 	public String toString() {
-		return "Checking: " + getName() + ": " + getBalance();
+		final String CHECKING_COLON_SPACE_STR = "Checking: ";
+		final String COLON_SPACE_STR = ": ";
+		return CHECKING_COLON_SPACE_STR + getName() + COLON_SPACE_STR + getBalance();
 	}
 	
 	private int numWithdraws = 0;
 }
+

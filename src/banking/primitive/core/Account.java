@@ -1,3 +1,12 @@
+/*
+ * File: Account.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Contains generic account methods
+ */
+
+
 package banking.primitive.core;
 
 public abstract class Account implements java.io.Serializable {
@@ -9,6 +18,7 @@ public abstract class Account implements java.io.Serializable {
 
     protected float balance = 0.0F;
     protected String name;
+    private State state;
 
     protected Account(String n) {
         name = n;
@@ -72,6 +82,8 @@ public abstract class Account implements java.io.Serializable {
         return "Account " + name + " has $" + balance + "and is " + getState()
                 + "\n";
     }
-    
     private State state;
+    protected float balance = 0.0F;
+    protected String name;
 }
+
