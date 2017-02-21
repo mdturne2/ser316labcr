@@ -13,20 +13,20 @@ import javax.swing.*;
 
 @SuppressWarnings("serial")
 class MainFrame extends JFrame {
-	AccountServer	_myServer;
-	Properties		_props;
-	JLabel			_typeLabel;
-	JLabel			_nameLabel;
-	JLabel			_balanceLabel;
-	JComboBox		_typeOptions;
-	JTextField		_nameField;
-	JTextField		_balanceField;
-	JButton 		_depositButton;
-	JButton 		_withdrawButton;
-	JButton			_newAccountButton;
-	JButton			_displayAccountsButton;
-	JButton			_displayODAccountsButton;
-
+	private AccountServer _myServer;
+	private _Properties props;
+	private _JLabel typeLabel;
+	private _JLabel nameLabel;
+	private _JLabel balanceLabel;
+	private _JComboBox typeOptions;
+	private _JTextField nameField;
+	private _JTextField balanceField;
+	private _JButton depositButton;
+	private _JButton withdrawButton;
+	private _JButton	newAccountButton;
+	private _JButton	displayAccountsButton;
+	private _JButton	displayODAccountsButton;
+  
 	public MainFrame(String propertyFile) throws IOException {
 
 		//** initialize myServer
@@ -49,9 +49,9 @@ class MainFrame extends JFrame {
 	
 	private void _constructForm() {
 		//*** Make these read from properties
-		_typeLabel		= new JLabel(_props.getProperty("TypeLabel"));
-		_nameLabel		= new JLabel(_props.getProperty("NameLabel"));
-		_balanceLabel	= new JLabel(_props.getProperty("BalanceLabel"));
+		_typeLabel = new JLabel(props.getProperty("TypeLabel"));
+		_nameLabel = new JLabel(props.getProperty("NameLabel"));
+		_balanceLabel = new JLabel(props.getProperty("BalanceLabel"));
 
 		Object[] accountTypes = {"Savings", "Checking"};
 		_typeOptions = new JComboBox(accountTypes);
