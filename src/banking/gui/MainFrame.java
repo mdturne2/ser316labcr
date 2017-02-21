@@ -1,4 +1,5 @@
 
+
 package banking.gui;
 
 import banking.primitive.core.Account;
@@ -22,22 +23,6 @@ import javax.swing.*;
 
 @SuppressWarnings("serial")
 class MainFrame extends JFrame {
-
-	
-	
-	AccountServer	myServer;
-	Properties		props;
-	JLabel			typeLabel;
-	JLabel			nameLabel;
-	JLabel			balanceLabel;
-	JComboBox		typeOptions;
-	JTextField		nameField;
-	JTextField		balanceField;
-	JButton 		depositButton;
-	JButton 		withdrawButton;
-	JButton			newAccountButton;
-	JButton			displayAccountsButton;
-	JButton			displayODAccountsButton;
 	/**
 	  Method: MainFrame
 	  Inputs: propertyFile
@@ -283,20 +268,18 @@ class MainFrame extends JFrame {
 			final int SYSTEM_EXIT_PARAMETER = 0;
 			System.exit(SYSTEM_EXIT_PARAMETER);
 		}
-	}
 	
-	AccountServer	myServer;
-	Properties		props;
-	JLabel			typeLabel;
-	JLabel			nameLabel;
-	JLabel			balanceLabel;
-	JComboBox		typeOptions;
-	JTextField		nameField;
-	JTextField		balanceField;
-	JButton 		depositButton;
-	JButton 		withdrawButton;
-	JButton			newAccountButton;
-	JButton			displayAccountsButton;
-	JButton			displayODAccountsButton;
+	AccountServer myServer;
+	Properties props;
+	JLabel typeLabel;
+	JLabel nameLabel;
+	JLabel balanceLabel;
+	JComboBox typeOptions;
+	JTextField nameField;
+	JTextField balanceField;
+	JButton depositButton;
+	JButton withdrawButton;
+	JButton	newAccountButton;
+	JButton	displayAccountsButton;
+	JButton	displayODAccountsButton;
 }
-

@@ -51,16 +51,13 @@ public abstract class Account implements java.io.Serializable {
 
     /**
 
+
     Method: getName
     Inputs: N/A
     Returns: name
 
     Description: Returns the name of the account.
     */
-
-     * @return name of the Account
-     */
-
     public final String getName() {
         return name;
     }
@@ -76,21 +73,17 @@ public abstract class Account implements java.io.Serializable {
     public final float getBalance() {
         return balance;
     }
-    
-    /**
-    Method: deposit
-    Inputs: amount
-    Returns: True/False
 
-    Description: Adds money to an account. May not be done if the account is CLOSED
-    */
-
-     * @return balance in the Account
-     */
-    public final float getBalance() {
-        return balance;
+    protected final State getState() {
+        return state;
     }
+    
+    public abstract String getType();
 
+    protected final void setState(State s) {
+        state = s;
+    }
+    
     /**
      * Adds money to an account. May not be done if the account is CLOSED
      * 
@@ -100,6 +93,13 @@ public abstract class Account implements java.io.Serializable {
      *         invalid state
      */
 
+      /**
+    Method: deposit
+    Inputs: amount
+    Returns: True/False
+
+    Description: Adds money to an account. May not be done if the account is CLOSED
+    */
     public abstract boolean deposit(float amount);
 
     /**
@@ -154,8 +154,6 @@ public abstract class Account implements java.io.Serializable {
     protected final void setState(State s) {
         state = s;
     }
-
-
     /**
     Method: toString
     Inputs: N/A
