@@ -24,6 +24,11 @@ public class Checking extends Account {
 	public Checking(String name, float balance) {
 		super(name, balance);
 	}
+	
+	public String getType() {
+		final String CHECKING_STR = "Checking";
+		return CHECKING_STR; 
+	}
 
 	/**
 	 * A deposit may be made unless the Checking account is closed
@@ -62,10 +67,6 @@ public class Checking extends Account {
 		return false;
 	}
 
-	public String getType() {
-		final String CHECKING_STR = "Checking";
-		return CHECKING_STR; 
-	}
 	
 	public String toString() {
 		final String CHECKING_COLON_SPACE_STR = "Checking: ";
