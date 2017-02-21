@@ -2,7 +2,7 @@ package banking.primitive.core;
 
 public class Checking extends Account {
 
-	private static final long serialVersionUID = 11L;
+	private static final long SERIAL_VERSION_UID = 11L;
 	private int numWithdraws = 0;
 	
 	private Checking(String name) {
