@@ -7,10 +7,14 @@
  * Description: Contains generic account methods
  */
 
-
-
 package banking.primitive.core;
 
+/**
+Class: Account
+
+Description: It provides the program with the functionality and methods that an account would have.
+			 i.e withdraw, deposit, type of account and such
+*/
 public abstract class Account implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -73,15 +77,16 @@ public abstract class Account implements java.io.Serializable {
     public final float getBalance() {
         return balance;
     }
+  
+    /**
+    Method: getState
+    Inputs: N/A
+    Returns: state
 
+    Description: Returns the state of the account
+    */
     protected final State getState() {
         return state;
-    }
-    
-    public abstract String getType();
-
-    protected final void setState(State s) {
-        state = s;
     }
     
     /**
@@ -132,13 +137,6 @@ public abstract class Account implements java.io.Serializable {
   */
     public abstract String getType();
     
-    /**
-    Method: getState
-    Inputs: N/A
-    Returns: state
-
-    Description: Returns the state of the account
-    */
     protected final State getState() {
         return state;
     }

@@ -16,14 +16,18 @@ import banking.primitive.core.Account.State;
  * Description: Contains info for the GUI
  */
 
+/**
+Class: ServerSolution
+
+Description: Takes care of the "server-side" of the project.
+			 Handles the storage of the accounts and its types for the user to access later.
+*/
 class ServerSolution implements AccountServer {
-
-
 	static String fileName = "accounts.ser";
 
 	Map<String,Account> accountMap = null;
 
-	/**
+  	/**
 	  Method: ServerSolution
 	  Inputs: N/A
 	  Returns: N/A
@@ -60,7 +64,6 @@ class ServerSolution implements AccountServer {
 			}
 		}
 	}
-	
 
 	/**
 	  Method: newAccountFactory
@@ -125,7 +128,6 @@ class ServerSolution implements AccountServer {
 		acc.setState(State.CLOSED);
 		return true;
 	}
-
 	/**
 	  Method: getAccount
 	  Inputs: name
@@ -136,7 +138,6 @@ class ServerSolution implements AccountServer {
 	public Account getAccount(String name) {
 		return accountMap.get(name);
 	}
-
 	/**
 	  Method: getAllAccounts
 	  Inputs: N/A
@@ -147,7 +148,6 @@ class ServerSolution implements AccountServer {
 	public List<Account> getAllAccounts() {
 		return new ArrayList<Account>(accountMap.values());
 	}
-
 	/**
 	  Method: getActiveAccounts
 	  Inputs: N/A
@@ -194,9 +194,3 @@ class ServerSolution implements AccountServer {
 				}
 			}
 		}
-	}
-	
-	static String fileName = "accounts.ser";
-
-	Map<String,Account> accountMap = null;
-}

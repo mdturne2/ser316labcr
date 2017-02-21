@@ -1,5 +1,3 @@
-
-
 package banking.primitive.core;
 /*
  * File: Checking.java
@@ -9,12 +7,18 @@ package banking.primitive.core;
  * Description: Contains Checking implementation of Accounts
  */
 
+/**
+Class: Checking
+
+Description: This class extends from the Account class and includes varies methods.
+			 This class provides the user with a different type of account they might want to have.
+			 Acts as a checkings account.
+*/
+
 public class Checking extends Account {
 
 
 	private static final long serialVersionUID = 11L;
-
-	
 	/**
 	  Method: Checking
 	  Inputs: name
@@ -47,7 +51,18 @@ public class Checking extends Account {
 	public Checking(String name, float balance) {
 		super(name, balance);
 	}
+  
+	/**
+	  Method: getType
+	  Inputs: N/A
+	  Returns: "Checking"
 
+	  Description: Returns string saying this is a checking account.
+	*/
+	public String getType() {
+		final String CHECKING_STR = "Checking";
+		return CHECKING_STR; 
+	}
 	/**
 	  Method: deposit
 	  Inputs: amount
@@ -55,6 +70,7 @@ public class Checking extends Account {
 
 	  Description: A deposit may be made unless the Checking account is closed.
 	*/
+
 	public boolean deposit(float amount) {
 		if (getState() != State.CLOSED && amount > 0.0f) {
 			balance = balance + amount;
@@ -79,9 +95,10 @@ public class Checking extends Account {
 			// KG: incorrect, last balance check should be >=
 			if (getState() == State.OPEN || (getState() == State.OVERDRAWN && balance > -100.0f)) {
 				balance = balance - amount;
-				numWithdraws++;
-				if (numWithdraws > 10)
+				_numWithdraws++;
+				if (_numWithdraws > 10)
 					balance = balance - 2.0f;
+        }
 				if (balance < 0.0f) {
 					setState(State.OVERDRAWN);
 				}
@@ -90,34 +107,17 @@ public class Checking extends Account {
 		}
 		return false;
 	}
-
-	/**
-	  Method: getType
-	  Inputs: N/A
-	  Returns: "Checking"
-
-	  Description: Returns string saying this is a checking account.
-	*/
-	public String getType() { return "Checking"; }
-
-	public String getType() {
-		final String CHECKING_STR = "Checking";
-		return CHECKING_STR; 
-	}
-
-	
 	/**
 	  Method: toString
 	  Inputs: N/A
 	  Returns: String containing name and balance
 
 	  Description: Returns string containing name and balance.
-	*/
+    */
 	public String toString() {
 		final String CHECKING_COLON_SPACE_STR = "Checking: ";
 		final String COLON_SPACE_STR = ": ";
 		return CHECKING_COLON_SPACE_STR + getName() + COLON_SPACE_STR + getBalance();
 	}
-	
-	private int numWithdraws = 0;
+	private int _numWithdraws = 0;
 }

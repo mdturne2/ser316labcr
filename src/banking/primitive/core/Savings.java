@@ -1,4 +1,3 @@
-
 package banking.primitive.core;
 /*
  * File: Savings.java
@@ -8,6 +7,13 @@ package banking.primitive.core;
  * Description: Contains Savings implementation of Account
  */
 
+/**
+Class: Savings
+
+Description: This class extends from the Account class and includes varies methods.
+			 This class provides the user with a different type of account they might want to have.
+			 Acts as a savings account.
+*/
 
 public class Savings extends Account {
 	private static final long serialVersionUID = 111L;
@@ -68,8 +74,8 @@ public class Savings extends Account {
 	public boolean withdraw(float amount) {
 		if (getState() == State.OPEN && amount > 0.0f) {
 			balance = balance - amount;
-			numWithdraws++;
-			if (numWithdraws > 3)
+			_numWithdraws++;
+			if (_numWithdraws > 3)
 				balance = balance - 1.0f;
 			// KG BVA: should be < 0
 			if (balance <= 0.0f) {
@@ -110,6 +116,5 @@ public class Savings extends Account {
 		return CHECKING_COLON_SPACE_STR + getName() + COLON_SPACE_STR + getBalance();
 	}
 	
-	private int numWithdraws = 0;
+	private int _numWithdraws = 0;
 }
-

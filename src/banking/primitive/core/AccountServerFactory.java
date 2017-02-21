@@ -1,11 +1,23 @@
+/*
+ * File: AccountServerFactory.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: contains factory for accountserver
+ */
 
 package banking.primitive.core;
 
+/**
+Class: AccountServerFactory
 
+Description: This class helps create the "server-side" of the project.
+			 Essentially what it does is it helps build AccountServer.
+*/
 public class AccountServerFactory {
 
-	protected static AccountServerFactory singleton = null;
-	
+	private static AccountServerFactory singleton = null;
+  
 	/**
 	  Method: AccountServerFactory
 	  Inputs: N/A
@@ -16,8 +28,7 @@ public class AccountServerFactory {
 	protected AccountServerFactory() {
 
 	}
-	
-	/**
+  	/**
 	  Method: getMe
 	  Inputs: N/A
 	  Returns: singleton
