@@ -1,12 +1,3 @@
-/*
- * File: ServerSolution.java
- * Author: kevingary
- * Date: Unknown
- * 
- * Description: Contains info for the GUI
- */
-
-
 package banking.primitive.core;
 
 import java.util.ArrayList;
@@ -17,11 +8,15 @@ import java.io.*;
 
 import banking.primitive.core.Account.State;
 
+/*
+ * File: ServerSolution.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Contains info for the GUI
+ */
+
 class ServerSolution implements AccountServer {
-
-	static String fileName = "accounts.ser";
-
-	Map<String,Account> accountMap = null;
 
 	public ServerSolution() {
 		accountMap = new HashMap<String,Account>();
@@ -53,8 +48,8 @@ class ServerSolution implements AccountServer {
 			}
 		}
 	}
-
-	public boolean newAccount(String type, String name, float balance) 
+	
+  public boolean newAccount(String type, String name, float balance) 
 		throws IllegalArgumentException {
 		
 		if (balance < 0.0f) throw new IllegalArgumentException("New account may not be started with a negative balance");
@@ -111,9 +106,9 @@ class ServerSolution implements AccountServer {
 				}
 			}
 		}
-	}
+  }
 	
-	private boolean _newAccountFactory(String type, String name, float balance)
+  private boolean _newAccountFactory(String type, String name, float balance)
 			throws IllegalArgumentException {
 			
 			if (accountMap.get(name) != null) return false;
@@ -135,5 +130,9 @@ class ServerSolution implements AccountServer {
 			}
 			return true;
 		}
+  
+	static String fileName = "accounts.ser";
+
+	Map<String,Account> accountMap = null;
 
 }
