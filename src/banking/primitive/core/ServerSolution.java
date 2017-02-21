@@ -1,12 +1,3 @@
-/*
- * File: ServerSolution.java
- * Author: kevingary
- * Date: Unknown
- * 
- * Description: Contains info for the GUI
- */
-
-
 package banking.primitive.core;
 
 import java.util.ArrayList;
@@ -17,17 +8,22 @@ import java.io.*;
 
 import banking.primitive.core.Account.State;
 
+/*
+ * File: ServerSolution.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Contains info for the GUI
+ */
+
 /**
 Class: ServerSolution
 
 Description: Takes care of the "server-side" of the project.
 			 Handles the storage of the accounts and its types for the user to access later.
 */
+
 class ServerSolution implements AccountServer {
-
-	static String fileName = "accounts.ser";
-
-	Map<String,Account> accountMap = null;
 
 	public ServerSolution() {
 		accountMap = new HashMap<String,Account>();
@@ -60,30 +56,7 @@ class ServerSolution implements AccountServer {
 		}
 	}
 	
-	private boolean _newAccountFactory(String type, String name, float balance)
-		throws IllegalArgumentException {
-		
-		if (accountMap.get(name) != null) return false;
-		
-		Account acc;
-		if ("Checking".equals(type)) {
-			acc = new Checking(name, balance);
-
-		} else if ("Savings".equals(type)) {
-			acc = new Savings(name, balance);
-
-		} else {
-			throw new IllegalArgumentException("Bad account type:" + type);
-		}
-		try {
-			accountMap.put(acc.getName(), acc);
-		} catch (Exception exc) {
-			return false;
-		}
-		return true;
-	}
-
-	public boolean newAccount(String type, String name, float balance) 
+  public boolean newAccount(String type, String name, float balance) 
 		throws IllegalArgumentException {
 		
 		if (balance < 0.0f) throw new IllegalArgumentException("New account may not be started with a negative balance");
@@ -140,6 +113,33 @@ class ServerSolution implements AccountServer {
 				}
 			}
 		}
-	}
+  }
+	
+  private boolean _newAccountFactory(String type, String name, float balance)
+			throws IllegalArgumentException {
+			
+			if (accountMap.get(name) != null) return false;
+			
+			Account acc;
+			if ("Checking".equals(type)) {
+				acc = new Checking(name, balance);
+
+			} else if ("Savings".equals(type)) {
+				acc = new Savings(name, balance);
+
+			} else {
+				throw new IllegalArgumentException("Bad account type:" + type);
+			}
+			try {
+				accountMap.put(acc.getName(), acc);
+			} catch (Exception exc) {
+				return false;
+			}
+			return true;
+		}
+  
+	static String fileName = "accounts.ser";
+
+	Map<String,Account> accountMap = null;
 
 }
