@@ -224,7 +224,7 @@ class MainFrame extends JFrame {
 	static class FrameHandler extends WindowAdapter {
 		public void windowClosing(WindowEvent e) {
 			final int SYSTEM_EXIT_PARAMETER = 0;
-			System.exit(SYSTEM_EXIT_PARAMENTER);
+			System.exit(SYSTEM_EXIT_PARAMETER);
 		}
 	}
 }
