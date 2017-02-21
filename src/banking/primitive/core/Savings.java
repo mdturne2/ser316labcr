@@ -1,3 +1,5 @@
+
+package banking.primitive.core;
 /*
  * File: Savings.java
  * Author: kevingary
@@ -6,8 +8,6 @@
  * Description: Contains Savings implementation of Account
  */
 
-
-package banking.primitive.core;
 
 public class Savings extends Account {
 	private static final long serialVersionUID = 111L;
@@ -30,6 +30,7 @@ public class Savings extends Account {
 			if (balance >= 0.0f) {
 				setState(State.OPEN);
 			}
+			return true;
 		}
 		return false;
 	}
@@ -59,3 +60,4 @@ public class Savings extends Account {
 		return "Savings: " + getName() + ": " + getBalance();
 	}
 }
+
