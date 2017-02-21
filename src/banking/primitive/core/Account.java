@@ -1,4 +1,3 @@
-
 /*
  * File: Account.java
  * Author: kevingary
@@ -83,4 +82,8 @@ public abstract class Account implements java.io.Serializable {
         return "Account " + name + " has $" + balance + "and is " + getState()
                 + "\n";
     }
+    private State state;
+    protected float balance = 0.0F;
+    protected String name;
 }
+
