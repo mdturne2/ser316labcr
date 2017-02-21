@@ -16,6 +16,13 @@ import banking.primitive.core.Account.State;
  * Description: Contains info for the GUI
  */
 
+/**
+Class: ServerSolution
+
+Description: Takes care of the "server-side" of the project.
+			 Handles the storage of the accounts and its types for the user to access later.
+*/
+
 class ServerSolution implements AccountServer {
 
 	public ServerSolution() {

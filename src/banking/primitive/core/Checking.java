@@ -7,6 +7,16 @@ package banking.primitive.core;
  * Description: Contains Checking implementation of Accounts
  */
 
+
+
+/**
+Class: Checking
+
+Description: This class extends from the Account class and includes varies methods.
+			 This class provides the user with a different type of account they might want to have.
+			 Acts as a checkings account.
+*/
+
 public class Checking extends Account {
 
 

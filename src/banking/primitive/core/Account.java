@@ -1,3 +1,4 @@
+
 /*
  * File: Account.java
  * Author: kevingary
@@ -6,9 +7,15 @@
  * Description: Contains generic account methods
  */
 
-
+ 
 package banking.primitive.core;
 
+/**
+Class: Account
+
+Description: It provides the program with the functionality and methods that an account would have.
+			 i.e withdraw, deposit, type of account and such
+*/
 public abstract class Account implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -86,4 +93,3 @@ public abstract class Account implements java.io.Serializable {
     protected float balance = 0.0F;
     protected String name;
 }
-
