@@ -8,13 +8,6 @@ import java.io.*;
 
 import banking.primitive.core.Account.State;
 
-<<<<<<< HEAD:banking/primitive/core/ServerSolution.java
-class ServerSolution implements AccountServer {
-
-	private static String fileName = "accounts.ser";
-
-	private Map<String,Account> accountMap = null;
-
 /*
  * File: ServerSolution.java
  * Author: kevingary
@@ -72,8 +65,6 @@ class ServerSolution implements AccountServer {
 		}
 	}
 	
-	private boolean newAccountFactory(String type, String name, float balance)
-
 	/**
 	  Method: newAccountFactory
 	  Inputs: type, name, balance
@@ -108,7 +99,7 @@ class ServerSolution implements AccountServer {
 		
 		if (balance < 0.0f) throw new IllegalArgumentException("New account may not be started with a negative balance");
 		
-		return newAccountFactory(type, name, balance);
+		return _newAccountFactory(type, name, balance);
 	}
 	
 	public boolean closeAccount(String name) {
@@ -161,5 +152,4 @@ class ServerSolution implements AccountServer {
 			}
 		}
 	}
-
 }
