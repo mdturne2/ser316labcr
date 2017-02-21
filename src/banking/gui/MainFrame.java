@@ -22,18 +22,18 @@ import javax.swing.*;
 @SuppressWarnings("serial")
 class MainFrame extends JFrame {
   private AccountServer _myServer;
-	private _Properties props;
-	private _JLabel typeLabel;
-	private _JLabel nameLabel;
-	private _JLabel balanceLabel;
-	private _JComboBox typeOptions;
-	private _JTextField nameField;
-	private _JTextField balanceField;
-	private _JButton depositButton;
-	private _JButton withdrawButton;
-	private _JButton	newAccountButton;
-	private _JButton	displayAccountsButton;
-	private _JButton	displayODAccountsButton;
+	private Properties props;
+	private JLabel typeLabel;
+	private JLabel nameLabel;
+	private JLabel balanceLabel;
+	private JComboBox typeOptions;
+	private JTextField nameField;
+	private JTextField balanceField;
+	private JButton depositButton;
+	private JButton withdrawButton;
+	private JButton	newAccountButton;
+	private JButton	displayAccountsButton;
+	private JButton	displayODAccountsButton;
 	/**
 	  Method: MainFrame
 	  Inputs: propertyFile
@@ -47,7 +47,7 @@ class MainFrame extends JFrame {
 		//** initialize myServer
 		_myServer = AccountServerFactory.getMe().lookup();
 
-		_props = new Properties();
+		props = new Properties();
 
 
 		FileInputStream fis = null; 
@@ -64,25 +64,25 @@ class MainFrame extends JFrame {
 	
 	private void _constructForm() {
 		//*** Make these read from properties
-		_typeLabel = new JLabel(props.getProperty("TypeLabel"));
-		_nameLabel = new JLabel(props.getProperty("NameLabel"));
-		_balanceLabel = new JLabel(props.getProperty("BalanceLabel"));
+		typeLabel = new JLabel(props.getProperty("TypeLabel"));
+		nameLabel = new JLabel(props.getProperty("NameLabel"));
+		balanceLabel = new JLabel(props.getProperty("BalanceLabel"));
 
 		Object[] accountTypes = {"Savings", "Checking"};
-		_typeOptions = new JComboBox(accountTypes);
-		_nameField = new JTextField(20);
-		_balanceField = new JTextField(20);
+		typeOptions = new JComboBox(accountTypes);
+		nameField = new JTextField(20);
+		balanceField = new JTextField(20);
 
-		_newAccountButton = new JButton("New Account");
+		newAccountButton = new JButton("New Account");
 		JButton depositButton = new JButton("Deposit");
 		JButton withdrawButton = new JButton("Withdraw");
 		JButton saveButton = new JButton("Save Accounts");
-		_displayAccountsButton = new JButton("List Accounts");
+		displayAccountsButton = new JButton("List Accounts");
 		JButton displayAllAccountsButton = new JButton("All Accounts");
 
 		this.addWindowListener(new _FrameHandler());
-		_newAccountButton.addActionListener(new _NewAccountHandler());
-		_displayAccountsButton.addActionListener(new _DisplayHandler());
+		newAccountButton.addActionListener(new _NewAccountHandler());
+		displayAccountsButton.addActionListener(new _DisplayHandler());
 		displayAllAccountsButton.addActionListener(new _DisplayHandler());
 		depositButton.addActionListener(new _DepositHandler());
 		withdrawButton.addActionListener(new _WithdrawHandler());
@@ -92,24 +92,24 @@ class MainFrame extends JFrame {
 		pane.setLayout(new FlowLayout());
 		
 		JPanel panel1 = new JPanel();
-		panel1.add(_typeLabel);
-		panel1.add(_typeOptions);
+		panel1.add(typeLabel);
+		panel1.add(typeOptions);
 		
 		JPanel panel2 = new JPanel();
-		panel2.add(_displayAccountsButton);
+		panel2.add(displayAccountsButton);
 		panel2.add(displayAllAccountsButton);
 		panel2.add(saveButton);
 		
 		JPanel panel3 = new JPanel();
-		panel3.add(_nameLabel);
-		panel3.add(_nameField);
+		panel3.add(nameLabel);
+		panel3.add(nameField);
 		
 		JPanel panel4 = new JPanel();
-		panel4.add(_balanceLabel);
-		panel4.add(_balanceField);
+		panel4.add(balanceLabel);
+		panel4.add(balanceField);
 		
 		JPanel panel5 = new JPanel();
-		panel5.add(_newAccountButton);
+		panel5.add(newAccountButton);
 		panel5.add(depositButton);
 		panel5.add(withdrawButton);
 
@@ -132,7 +132,7 @@ class MainFrame extends JFrame {
 		*/
 		public void actionPerformed(ActionEvent e) {
 			List<Account> accounts = null;
-			if (e.getSource() == _displayAccountsButton) {
+			if (e.getSource() == displayAccountsButton) {
 				accounts = _myServer.getActiveAccounts();
 			} else {
 				accounts = _myServer.getAllAccounts();
@@ -158,9 +158,9 @@ class MainFrame extends JFrame {
 		  Description: Opens a window saying whether or not an account was successfully created when the button is clicked.
 		*/
 		public void actionPerformed(ActionEvent e) {
-			String type = _typeOptions.getSelectedItem().toString();
-			String name = _nameField.getText();
-			String balance = _balanceField.getText();
+			String type = typeOptions.getSelectedItem().toString();
+			String name = nameField.getText();
+			String balance = balanceField.getText();
 
 			if (_myServer.newAccount(type, name, Float.parseFloat(balance))) {
 				JOptionPane.showMessageDialog(null, "Account created successfully");
@@ -203,8 +203,8 @@ class MainFrame extends JFrame {
 		public void actionPerformed(ActionEvent e) {
       final String SUCCESSFUL_DEPOSIT_STR = "Deposit successful";
 			final String FAILED_DEPOSIT_STR = "Deposit unsuccessful";
-			String name = _nameField.getText();
-			String balance = _balanceField.getText();
+			String name = nameField.getText();
+			String balance = balanceField.getText();
 			Account acc = _myServer.getAccount(name);
 			if (acc != null && acc.deposit(Float.parseFloat(balance))) {
 				JOptionPane.showMessageDialog(null, "Deposit successful");
@@ -225,8 +225,8 @@ class MainFrame extends JFrame {
 		public void actionPerformed(ActionEvent e) {
       final String SUCCESSFUL_WITHDRAWAL_STR = "Withdrawal successful";
 			final String FAILED_WITHDRAWAL_STR = "Withdrawal unsuccessful";
-			String name = _nameField.getText();
-			String balance = _balanceField.getText();
+			String name = nameField.getText();
+			String balance = balanceField.getText();
 			Account acc = _myServer.getAccount(name);
 			if (acc != null && acc.withdraw(Float.parseFloat(balance))) {
 				JOptionPane.showMessageDialog(null, "Withdrawal successful");

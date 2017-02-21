@@ -104,9 +104,9 @@ public class Checking extends Account {
 				}
 				return true;
 			}
-		}
 		return false;
-	}
+		}
+		
 	/**
 	  Method: toString
 	  Inputs: N/A

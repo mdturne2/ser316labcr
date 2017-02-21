@@ -17,7 +17,6 @@ Description: This class extends from the Account class and includes varies metho
 
 public class Savings extends Account {
 	private static final long serialVersionUID = 111L;
-	private int numWithdraws = 0;
 	
 	/**
 	  Method: Savings
@@ -39,10 +38,6 @@ public class Savings extends Account {
 	*/
 	public Savings(String name, float balance) throws IllegalArgumentException {
 		super(name, balance);
-	}
-	
-	public String getType() { 
-		return "Checking";
 	}
 
 	/**
@@ -96,11 +91,6 @@ public class Savings extends Account {
 	public String getType() { 
     return "Checking"; 
   }
-
-
-	public String getType() { 
-		return "Checking";
-	}
 
 	/**
 	  Method: toString

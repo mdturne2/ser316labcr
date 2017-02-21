@@ -137,10 +137,6 @@ public abstract class Account implements java.io.Serializable {
   */
     public abstract String getType();
     
-    protected final State getState() {
-        return state;
-    }
-    
     /**
     Method: setState
     Inputs: s
@@ -165,11 +161,6 @@ public abstract class Account implements java.io.Serializable {
                 + "\n";
     }
 
-}
-
-    private State state;
-    protected float balance = 0.0F;
-    protected String name;
 }
 
 

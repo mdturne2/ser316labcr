@@ -74,8 +74,6 @@ class ServerSolution implements AccountServer {
 	*/
 	private boolean _newAccountFactory(String type, String name, float balance)
 
-	private boolean _newAccountFactory(String type, String name, float balance)
-
 		throws IllegalArgumentException {
 		
 		if (accountMap.get(name) != null) return false;
@@ -194,3 +192,5 @@ class ServerSolution implements AccountServer {
 				}
 			}
 		}
+	}
+}
