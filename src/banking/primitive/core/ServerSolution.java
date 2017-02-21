@@ -1,3 +1,12 @@
+/*
+ * File: ServerSolution.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Contains info for the GUI
+ */
+
+
 package banking.primitive.core;
 
 import java.util.ArrayList;
@@ -45,7 +54,7 @@ class ServerSolution implements AccountServer {
 		}
 	}
 	
-	private boolean newAccountFactory(String type, String name, float balance)
+	private boolean _newAccountFactory(String type, String name, float balance)
 		throws IllegalArgumentException {
 		
 		if (accountMap.get(name) != null) return false;
@@ -73,7 +82,7 @@ class ServerSolution implements AccountServer {
 		
 		if (balance < 0.0f) throw new IllegalArgumentException("New account may not be started with a negative balance");
 		
-		return newAccountFactory(type, name, balance);
+		return _newAccountFactory(type, name, balance);
 	}
 	
 	public boolean closeAccount(String name) {

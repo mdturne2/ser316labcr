@@ -1,3 +1,12 @@
+/*
+ * File: Main.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Begin program execution
+ */
+
+
 package banking.gui;
 
 import javax.swing.JFrame;
