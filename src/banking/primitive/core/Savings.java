@@ -53,12 +53,16 @@ public class Savings extends Account {
 		return false;
 	}
 	
+
 	public String getType() { 
 		return "Checking";
 	}
 
+
 	public String toString() {
-		return "Savings: " + getName() + ": " + getBalance();
+		final String CHECKING_COLON_SPACE_STR = "Checking: ";
+		final String COLON_SPACE_STR = ": ";
+		return CHECKING_COLON_SPACE_STR + getName() + COLON_SPACE_STR + getBalance();
 	}
 	
 	private int numWithdraws = 0;
