@@ -1,3 +1,4 @@
+
 package banking.primitive.core;
 
 import java.util.ArrayList;
@@ -7,6 +8,14 @@ import java.util.HashMap;
 import java.io.*;
 
 import banking.primitive.core.Account.State;
+
+/*
+ * File: ServerSolution.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Contains info for the GUI
+ */
 
 class ServerSolution implements AccountServer {
 

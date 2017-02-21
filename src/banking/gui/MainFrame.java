@@ -1,3 +1,11 @@
+/*
+ * File: MainFrame.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Contains info for the GUI
+ */
+
 package banking.gui;
 
 import banking.primitive.core.Account;
