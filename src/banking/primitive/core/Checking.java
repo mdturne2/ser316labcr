@@ -3,7 +3,6 @@ package banking.primitive.core;
 public class Checking extends Account {
 
 	private static final long serialVersionUID = 11L;
-	private int numWithdraws = 0;
 	
 	private Checking(String name) {
 		super(name);
@@ -58,4 +57,6 @@ public class Checking extends Account {
 	public String toString() {
 		return "Checking: " + getName() + ": " + getBalance();
 	}
+	
+	private int numWithdraws = 0;
 }
