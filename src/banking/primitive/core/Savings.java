@@ -1,8 +1,22 @@
 package banking.primitive.core;
+/*
+ * File: Savings.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Contains Savings implementation of Account
+ */
+
+/**
+Class: Savings
+
+Description: This class extends from the Account class and includes varies methods.
+			 This class provides the user with a different type of account they might want to have.
+			 Acts as a savings account.
+*/
 
 public class Savings extends Account {
 	private static final long serialVersionUID = 111L;
-	private int numWithdraws = 0;
 
 	public Savings(String name) {
 		super(name);
@@ -10,6 +24,10 @@ public class Savings extends Account {
 
 	public Savings(String name, float balance) throws IllegalArgumentException {
 		super(name, balance);
+	}
+	
+	public String getType() { 
+		return "Checking";
 	}
 
 	/**
@@ -21,6 +39,7 @@ public class Savings extends Account {
 			if (balance >= 0.0f) {
 				setState(State.OPEN);
 			}
+			return true;
 		}
 		return false;
 	}
@@ -43,10 +62,13 @@ public class Savings extends Account {
 		}
 		return false;
 	}
-	
-	public String getType() { return "Checking"; }
 
 	public String toString() {
-		return "Savings: " + getName() + ": " + getBalance();
+		final String CHECKING_COLON_SPACE_STR = "Checking: ";
+		final String COLON_SPACE_STR = ": ";
+		return CHECKING_COLON_SPACE_STR + getName() + COLON_SPACE_STR + getBalance();
 	}
+	
+	private int numWithdraws = 0;
 }
+
