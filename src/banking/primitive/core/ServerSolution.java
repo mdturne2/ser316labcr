@@ -3,11 +3,10 @@ package banking.primitive.core;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import banking.primitive.core.Account.State;
-
 import java.util.HashMap;
 import java.io.*;
+
+import banking.primitive.core.Account.State;
 
 /*
  * File: ServerSolution.java
