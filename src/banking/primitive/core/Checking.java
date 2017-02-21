@@ -9,6 +9,13 @@
 
 package banking.primitive.core;
 
+/**
+Class: Checking
+
+Description: This class extends from the Account class and includes varies methods.
+			 This class provides the user with a different type of account they might want to have.
+			 Acts as a checkings account.
+*/
 public class Checking extends Account {
 
 	private static final long serialVersionUID = 11L;

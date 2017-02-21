@@ -16,6 +16,12 @@ import javax.swing.JFrame;
  * @author kevinagary
  *
  */
+
+/**
+Class: Main
+
+Description: This Class starts the program.
+*/
 final class Main {
 	/**
 	 * Private constructor to address STYLE issue.

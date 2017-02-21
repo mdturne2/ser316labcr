@@ -17,6 +17,12 @@ import java.io.*;
 
 import banking.primitive.core.Account.State;
 
+/**
+Class: ServerSolution
+
+Description: Takes care of the "server-side" of the project.
+			 Handles the storage of the accounts and its types for the user to access later.
+*/
 class ServerSolution implements AccountServer {
 
 	static String fileName = "accounts.ser";

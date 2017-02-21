@@ -19,6 +19,12 @@ import java.awt.Container;
 import java.awt.event.*;
 import javax.swing.*;
 
+/**
+Class: MainFrame
+
+Description: Contains the gui-side of the project.
+			 Creates text fields, buttons, frames and such for a user to navigate easily.
+*/
 @SuppressWarnings("serial")
 class MainFrame extends JFrame {
 	AccountServer	myServer;
