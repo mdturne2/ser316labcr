@@ -22,7 +22,6 @@ public class Checking extends Account {
 
 
 	private static final long serialVersionUID = 11L;
-
 	
 	private Checking(String name) {
 		super(name);
@@ -65,8 +64,9 @@ public class Checking extends Account {
 			// KG: incorrect, last balance check should be >=
 			if (getState() == State.OPEN || (getState() == State.OVERDRAWN && balance > -100.0f)) {
 				balance = balance - amount;
-				numWithdraws++;
-				if (numWithdraws > 10){
+
+				_numWithdraws++;
+				if (_numWithdraws > 10)
 					balance = balance - 2.0f;
         }
 				if (balance < 0.0f) {
@@ -85,5 +85,5 @@ public class Checking extends Account {
 		return CHECKING_COLON_SPACE_STR + getName() + COLON_SPACE_STR + getBalance();
 	}
 	
-	private int numWithdraws = 0;
+	private int _numWithdraws = 0;
 }
