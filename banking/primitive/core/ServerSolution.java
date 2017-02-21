@@ -1,4 +1,3 @@
-
 package banking.primitive.core;
 
 import java.util.ArrayList;
@@ -129,7 +128,6 @@ class ServerSolution implements AccountServer {
 	}
 
 }
-=======
 package banking.primitive.core;
 
 import java.util.ArrayList;
