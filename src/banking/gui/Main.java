@@ -16,12 +16,6 @@ import javax.swing.JFrame;
  * @author kevinagary
  *
  */
-
-/**
-Class: Main
-
-Description: This class builds the entire project up and calls MainFrame to create a new object and runs the program. 
-*/
 final class Main {
 	/**
 	 * Private constructor to address STYLE issue.

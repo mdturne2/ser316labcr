@@ -19,12 +19,6 @@ import java.awt.Container;
 import java.awt.event.*;
 import javax.swing.*;
 
-/**
-Class: MainFrame
-
-Description: This class builds gui for everything that the program needs.
-			 This includes frames, buttons, textfields etc.
-*/
 @SuppressWarnings("serial")
 class MainFrame extends JFrame {
 	AccountServer	myServer;
