@@ -11,6 +11,8 @@ public class Savings extends Account {
 	public Savings(String name, float balance) throws IllegalArgumentException {
 		super(name, balance);
 	}
+	
+	public String getType() { return "Checking"; }
 
 	/**
 	 * A deposit comes with a fee of 50 cents per deposit
@@ -43,8 +45,6 @@ public class Savings extends Account {
 		}
 		return false;
 	}
-	
-	public String getType() { return "Checking"; }
 
 	public String toString() {
 		return "Savings: " + getName() + ": " + getBalance();
