@@ -17,6 +17,13 @@ import java.io.*;
 
 import banking.primitive.core.Account.State;
 
+/**
+Class: ServerSolution
+
+Description: It's purpose is to work as a "server-side" of the entire project.
+			 The class will save the types of accounts created and keep storage
+			 of the accounts for the user to use whenever they choose to.
+*/
 class ServerSolution implements AccountServer {
 
 	static String fileName = "accounts.ser";

@@ -8,7 +8,11 @@
 
 package banking.primitive.core;
 
+/**
+Class: AccountServerFactory
 
+Description: This class is what makes AccountServer useful. It will run and make the interface of AccountServer useful.
+*/
 public class AccountServerFactory {
 
 	protected static AccountServerFactory singleton = null;

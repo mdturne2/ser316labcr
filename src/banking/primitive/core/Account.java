@@ -10,6 +10,12 @@
 
 package banking.primitive.core;
 
+/**
+Class: Account
+
+Description: This class includes the functionality an account can have.
+			 By implementing methods like withdrawing, depositing and such.
+*/
 public abstract class Account implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
