@@ -1,3 +1,13 @@
+
+/*
+ * File: Main.java
+ * Author: kevingary
+ * Date: Unknown
+ * 
+ * Description: Begin program execution
+ */
+
+
 package banking.gui;
 
 import javax.swing.JFrame;
@@ -7,6 +17,12 @@ import javax.swing.JFrame;
  * @author kevinagary
  *
  */
+
+/**
+Class: Main
+
+Description: This Class starts the program.
+*/
 final class Main {
 	/**
 	 * Private constructor to address STYLE issue.
